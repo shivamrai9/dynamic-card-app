@@ -68,119 +68,85 @@ const FeedbackForm = () => {
           >
             <div className="max-w-xl lg:max-w-5xl w-full h-svh">
               <div className="rounded-lg p-8 h-full  lg:col-span-3 lg:p-12">
-              <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="" htmlFor="firstName">First Name</label>
-                  <input
-                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="First Name"
-                    type="text"
-                    id="firstName"   
+                <div className=" max-w-lg text-start mb-5">
+                  <h1 className="text-2xl font-bold sm:text-3xl">Thank you so mush for taking the time!</h1>
 
-                    name="firstName"
-                    value={feedback.firstName}
-                    onChange={handleChange}
-                  />
+                  <p className="text-gray-500">
+                    Please provide the  below details!
+                  </p>
                 </div>
-                <div>
-                  <label className="" htmlFor="lastName">Last Name</label>
-                  <input
-                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                    placeholder="Last Name"
-                    type="text"
-                    id="lastName"   
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                      <label className="" htmlFor="firstName">First Name:</label>
+                      <input
+                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                        placeholder="First Name"
+                        type="text"
+                        id="firstName"
 
-                    name="lastName"
-                    value={feedback.lastName}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
+                        name="firstName"
+                        value={feedback.firstName}
+                        onChange={handleChange}
+                      />
+                    </div>
 
-              <div className="mb-2">
-                <label className="block mb-1">Email:</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={feedback.email}
-                  onChange={handleChange}
-                  className="border p-2 w-full"
-                />
-              </div>
+                  </div>
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                      <label className="" htmlFor="lastName">Last Name:</label>
+                      <input
+                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                        placeholder="Last Name"
+                        type="text"
+                        id="lastName"
 
-              <div>
-                <label className="" htmlFor="message">Message</label>
-                <textarea
-                  name="message"
-                  value={feedback.message}
-                  onChange={handleChange}
-                  className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                  placeholder="Message"
-                  rows="8"
-                />
-              </div>
+                        name="lastName"
+                        value={feedback.lastName}
+                        onChange={handleChange}
+                      />
+                    </div>
 
-              <div className="mt-4">
-                <button
-                  type="submit"
-                  className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                >
-                  Send Enquiry
-                </button>   
+                  </div>
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="mb-2">
+                      <label className="block mb-1">Email:</label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={feedback.email}
+                        onChange={handleChange}
+                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                      />
+                    </div>
 
-              </div>
+                  </div>
 
-              {error && <p className="text-red-500 mt-2">{error}</p>}
-            </form>
+                  <div>
+                    <label className="" htmlFor="message">Message</label>
+                    <textarea
+                      name="message"
+                      value={feedback.message}
+                      onChange={handleChange}
+                      className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                      placeholder="Message"
+                      rows="8"
+                    />
+                  </div>
+
+                  <div className="mt-4">
+                    <button type="submit" className="w-1/4  py-4 font-bold bg-green-300 rounded-lg text-white"  >Submit Feedback</button>
+
+                  </div>
+
+                  {error && <p className="text-red-500 mt-2">{error}</p>}
+                </form>
               </div>
             </div>
           </main>
 
         </div>
       </section>
-      {/* <form 
-      id="feedback-form" 
-      className="hidden p-4 border rounded mt-4 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-      onSubmit={handleSubmit}
-    >
-      <div className="mb-2">
-        <label className="block mb-1">Name:</label>
-        <input 
-          type="text" 
-          name="name" 
-          value={feedback.name} 
-          onChange={handleChange} 
-          className="border p-2 w-full"
-        />
-      </div>
-      <div className="mb-2">
-        <label className="block mb-1">Email:</label>
-        <input 
-          type="email" 
-          name="email" 
-          value={feedback.email} 
-          onChange={handleChange} 
-          className="border p-2 w-full"
-        />
-      </div>
-      <div className="mb-2">
-        <label className="block mb-1">Message:</label>
-        <textarea 
-          name="message" 
-          value={feedback.message} 
-          onChange={handleChange} 
-          className="border p-2 w-full"
-        />
-      </div>
-      <button 
-        type="submit" 
-        className="p-2 bg-blue-500 text-white rounded"
-      >
-        Submit
-      </button>
-      {error && <p className="text-red-500 mt-2">{error}</p>}
-    </form> */}
     </>
   );
 };
