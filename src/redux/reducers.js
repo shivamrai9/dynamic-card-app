@@ -11,7 +11,8 @@ import {
     isLoading: true,
     viewMode: 'list',
     feedback: {
-      name: '',
+      firstName: '',
+      lastName:'',
       email: '',
       message: ''
     }

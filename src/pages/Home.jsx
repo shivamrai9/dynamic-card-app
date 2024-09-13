@@ -16,9 +16,9 @@ const Home = () => {
 
     return (
         <>
-            <section class="bg-white">
+            <section class="bg-gray-300">
                 <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
-                    <section class="relative flex h-32 bg-gray-200 lg:col-span-5 lg:h-full xl:col-span-3 flex-col items-center gap-3 p-5 px-14">
+                    <section class="relative flex h-32 bg-gray-200 rounded-e-3xl shadow-md lg:col-span-5 lg:h-full xl:col-span-3 flex-col items-center gap-3 pt-14 px-14">
 
                         <div class="rounded-xl w-full shadow-xl  p-3 bg-white">
                             <div class="flex items-center gap-4">
@@ -47,7 +47,36 @@ const Home = () => {
                                 <div>
                                     <div className=" text-center">
                                         <h3 className="text-2xl font-bold mb-3">View Toggle</h3>
-                                        <button className="w-full  py-4 font-bold bg-green-300 rounded-lg" onClick={handleToggleView} >{viewMode}</button>
+                                        <div className="flex items-center justify-center ">
+                                            <button
+                                                className={`rounded-s-lg py-2 px-4 text-center font-bold ${viewMode === 'list' ? 'bg-green-300 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                                    }`}
+                                                onClick={handleToggleView}
+                                            >
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    height="2em"
+                                                    width="2em"
+                                                >
+                                                    <path d="M4 6h2v2H4zm0 5h2v2H4zm0 5h2v2H4zm16-8V6H8.023v2H18.8zM8 11h12v2H8zm0 5h12v2H8z" />
+                                                </svg>
+                                            </button>
+                                            <button
+                                                className={`rounded-e-lg py-2 px-4 text-center font-bold ${viewMode === 'grid' ? 'bg-green-300 text-white' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                                    }`}
+                                                onClick={handleToggleView}
+                                            >
+                                                <svg
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    height="2em"
+                                                    width="2em"
+                                                >
+                                                    <path d="M10 7h4v4h-4zm6 0h4v4h-4zM4 7h4v4H4zm6 6h4v4h-4zm6 0h4v4h-4zM4 13h4v4H4z" />
+                                                </svg>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -66,15 +95,11 @@ const Home = () => {
                     </section>
 
                     <main
-                        className="flex items-center justify-center px-3 py-3  xl:col-span-9 bg-slate-400"
+                        className="flex flex-col items-center justify-start px-3 py-3  xl:col-span-9 bg-gray-300"
                     >
-                        <div className="max-w-xl lg:max-w-5xl w-full h-[500px]">
-                            <div className="h-full overflow-y-auto"> 
-                                <CardsList />
-                            </div>
-                            <div>
+                        <div className="max-w-xl lg:max-w-5xl w-full h-[600px]">
+                            <CardsList />
                             <Pagination />
-                            </div>
                         </div>
                     </main>
 
